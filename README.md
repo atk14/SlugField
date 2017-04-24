@@ -9,7 +9,7 @@ Installation
 Just use the Composer:
 
     $ cd path/to/your/atk14/project/
-    $ php composer require atk14/slug-field dev-master
+    $ composer require atk14/slug-field dev-master
 
 Optionaly you can link the field source file to the regular location
 
