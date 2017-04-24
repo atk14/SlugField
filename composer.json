@@ -1,0 +1,22 @@
+{
+        "name": "atk14/slug-field",
+        "type": "library",
+        "description": "ATK14 form field for entering slugs",
+        "keywords": ["atk14", "forms", "slug", "field"],
+        "homepage": "https://github.com/atk14/SlugField",
+        "license": ["MIT"],
+        "authors": [
+                {
+                        "name": "ATK14 Development Team",
+                        "homepage": "https://github.com/orgs/atk14/people"
+                }
+        ],
+        "require": {
+                "php": ">=5.3.0"
+        },
+        "require-dev": {
+        },
+        "autoload": {
+                "classmap": ["src"]
+        }
+}
