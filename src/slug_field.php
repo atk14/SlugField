@@ -20,7 +20,7 @@ class SlugField extends RegexField{
 
 	function clean($value){
 		if($this->auto_slugify){
-			$value = String4::ToObject($value)->toSlug()->toString();
+			$value = String4::ToObject($value)->toSlug($this->max_length)->toString();
 		}
 		return parent::clean($value);
 	}
