@@ -19,4 +19,22 @@ class TcSlugField extends TcBase {
 		$err_msg = $this->assertInvalid("###");
 		$this->assertEquals("Write something like black-cat-white-cat",$err_msg);
 	}
+
+	function test_max_length(){
+		$field = new SlugField(array());
+		$this->assertEquals(64,$field->max_length);
+
+		$field = new SlugField(array("max_length" => 100));
+		$this->assertEquals(100,$field->max_length);
+	}
+
+	function test_max_length_by_constant(){
+		define("SLUG_MAX_LENGTH",200);
+
+		$field = new SlugField(array());
+		$this->assertEquals(200,$field->max_length);
+
+		$field = new SlugField(array("max_length" => 100));
+		$this->assertEquals(100,$field->max_length);
+	}
 }

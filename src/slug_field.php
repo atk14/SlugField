@@ -4,7 +4,7 @@ class SlugField extends RegexField{
 	function __construct($options = array()){
 		$options += array(
 			"label" => _("Slug"),
-			"max_length" => 64,
+			"max_length" => defined("SLUG_MAX_LENGTH") ? (int)constant("SLUG_MAX_LENGTH") : 64,
 			"hint" => _("funny-green-mug"),
 			"auto_slugify" => true,
 			"null_empty_output" => true,
