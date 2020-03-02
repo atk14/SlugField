@@ -16,7 +16,7 @@ In a form:
 
         $this->add_field("title", new CharField([
           "label" => "Article title",
-          "max_length" => 255,
+          "max_length" => 100, // by default it is either constant SLUG_MAX_LENGTH (if defined) or 65
         ]));
 
         // ... other article fields
@@ -25,10 +25,23 @@ In a form:
           "label" => "Slug for cool looking url",
           "hint" => "are-you-too-clever-for-success",
           "auto_slugify" => true, // whether to convert automatically something like "Nice Title!" to "nice-title"; default is true
-          "max_length" => 128, // default is 64
+          "max_length" => 100,
         ]));
       }
     }
+
+Configuration
+-------------
+
+Optionally the default value for the max_length option can be set by the constant SLUG_MAX_LENGTH.
+
+
+    <?php
+    // file: config/settings.php
+
+    // ...
+
+    define("SLUG_MAX_LENGTH",100);
 
 Installation
 ------------
@@ -44,3 +57,5 @@ License
 -------
 
 SlugField is free software distributed [under the terms of the MIT license](http://www.opensource.org/licenses/mit-license)
+
+[//]: # ( vim: set ts=2 et: )
