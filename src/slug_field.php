@@ -1,6 +1,8 @@
 <?php
 class SlugField extends RegexField{
 
+	var $auto_slugify;
+
 	function __construct($options = array()){
 		$options += array(
 			"label" => _("Slug"),
